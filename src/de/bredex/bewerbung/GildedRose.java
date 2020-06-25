@@ -56,15 +56,7 @@ public class GildedRose {
             {
                 if (item.getQuality() > 0)
                 {
-                    
-                    if(isConjured(item)) 
-                    {
-                        
-                        int qualityChangeValue=Math.min(QUALITYCHANGECONSTANT*2, item.getQuality());
-                        item.setQuality(item.getQuality() - qualityChangeValue);
-                    }
-                    else
-                        item.setQuality(item.getQuality() - QUALITYCHANGECONSTANT);
+                    item.setQuality(item.getQuality() - QUALITYCHANGECONSTANT);
                 }
             }
             else
@@ -79,7 +71,7 @@ public class GildedRose {
                          {
                              if (item.getSellIn() < 11) 
                              {
-                                 item.setQuality(item.getQuality() + (2 * QUALITYCHANGECONSTANT));
+                                 item.setQuality(item.getQuality() + QUALITYCHANGECONSTANT);
                                  if (item.getSellIn() < 6)
                                      item.setQuality(item.getQuality() + QUALITYCHANGECONSTANT);
                                  }
@@ -107,8 +99,9 @@ public class GildedRose {
                             if (!isLegendary(item))
                             {
                                 if(isConjured(item))
-                                    item.setQuality(item.getQuality() - (2*QUALITYCHANGECONSTANT));
-                                item.setQuality(item.getQuality() - QUALITYCHANGECONSTANT);
+                                    item.setQuality(item.getQuality() - QUALITYCHANGECONSTANT);
+                                else
+                                    item.setQuality(item.getQuality() - QUALITYCHANGECONSTANT);
                             }
                         }
                     }
